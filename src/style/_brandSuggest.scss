@@ -1,0 +1,147 @@
+.brand-suggest {
+  position: fixed;
+  top: 0;
+  background-color: var(--color-bg);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow-y: scroll;
+
+  &-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+.brand__back-button {
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+
+.brand-form {
+  margin: 1rem;
+  &__label {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  &__label-text {
+    display: block;
+    margin-bottom: 1rem;
+
+    &--required::after {
+      content: '*';
+      color: var(--red);
+    }
+  }
+
+
+  &__name-input {
+    margin-bottom: 1rem;
+    width: 100%;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    padding-bottom: 0.3rem;
+    background-color: transparent;
+    color: white;
+    border-bottom: 1px solid var(--green);
+    outline: none;
+
+    &::placeholder {
+      font-size: 1rem;
+    }
+  }
+
+  &__image-input {
+    display: none;
+  }
+
+  &__button {
+    display: block;
+    margin: 3rem auto 0;
+    width: 80%;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    background-color: var(--green);
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &__brand-logo {
+    background-color: var(--color-accent);
+    border-radius: 0.5rem;
+    display: block;
+    margin-bottom: 1rem;
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  &__add-image-btn {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--blue);
+    color: var(--color-accent);
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.suggest-overlay {
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+}
+
+.suggest-popup {
+  text-align: center;
+  position: absolute;
+  top: calc(50% - 5rem);
+  left: calc(50% - 20rem);
+  height: 10rem;
+  width: 40rem;
+  border: 1px solid var(--green);
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: var(--color-bg);
+
+  &__title,
+  &__text {
+    margin-bottom: 1rem;
+  }
+
+  &__button {
+    padding: 1rem;
+    border-radius: 0.6rem;
+    margin: 0 auto;
+    display: block;
+    background-color: var(--green);
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}

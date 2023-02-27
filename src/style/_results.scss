@@ -1,0 +1,36 @@
+.result-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--color-bg);
+  min-width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  z-index: 2;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.result__title {
+  text-align: center;
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.result__list {
+  margin-bottom: 1rem;
+}
+
+.result__reset-btn {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 0.7rem;
+  background-color: var(--green);
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}

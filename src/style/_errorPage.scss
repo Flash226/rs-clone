@@ -1,0 +1,11 @@
+.error {
+  position: absolute;
+  top: calc(50% - 128px - 1rem);
+  left: calc(50% - 128px);
+  text-align: center;
+  font-variant: small-caps;
+
+  @media (width < 769px) {
+    top: calc(50% - 128px - 5rem);
+  }
+}

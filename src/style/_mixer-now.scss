@@ -1,0 +1,112 @@
+.mixer-now {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  background-color: var(--color-bg);
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 1rem 1rem;
+  z-index: 1;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.2rem;
+  }
+
+  &__container {
+    flex-grow: 1;
+    background-color: var(--list-color-bg);
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  &__back-button {
+    width: 2rem;
+    height: 2rem;
+    background-size: contain;
+    background-color: transparent;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+
+  &__message {
+    display: block;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  &-list {
+    list-style: none;
+    &__item {
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__flavor-info {
+    flex-grow: 1;
+  }
+
+  &__flavor-name {
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--color-accent);
+  }
+
+  &__flavor-brand {
+    display: block;
+  }
+
+  &__info-btn {
+    width: 2rem;
+    height: 2rem;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
+  &__remove-btn {
+    background-color: var(--red);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    transform: rotate(45deg);
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
+  &__continue-btn {
+    padding: 0.8rem;
+    background-color: var(--green);
+    border-radius: 0.6rem;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 1;
+    }
+  }
+}

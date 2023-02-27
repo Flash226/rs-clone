@@ -1,0 +1,50 @@
+.footer {
+  &__content {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    width: 100%;
+    min-height: 60px;
+    padding: 14px;
+    gap: 10px;
+    text-align: center;
+
+    @media (width < 769px) {
+      flex-wrap: wrap;
+    }
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: var(--color-font);
+    }
+  }
+
+  &__github {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 2 1 100%;
+  }
+  &__text,
+  &__rs {
+    flex: 1 1 100%;
+  }
+  &__nav {
+    justify-content: space-around;
+    display: none;
+    position: fixed;
+    width: 100%;
+    bottom: -2px;
+    background: #0d0a24;
+    box-shadow: 0 0px 2px rgb(228 220 220 / 76%);
+    padding: 15px;
+  }
+}
+// @media (max-width: 540px) {
+//   .footer__content {
+//     visibility: hidden;
+//   }
+// }

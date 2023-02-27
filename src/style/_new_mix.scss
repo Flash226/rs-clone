@@ -1,0 +1,240 @@
+.new-mix {
+  &__container-flovers {
+    margin-top: 150px;
+  }
+  &__heading {
+    font-size: 1.5rem;
+    margin: 0 auto;
+  }
+  &__flover {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    &__container {
+      margin-left: 20px;
+    }
+    
+    &__name {
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    
+    &__brand {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: rgb(149, 149, 149);
+    }
+    
+    &__input {
+      margin-top: 10px;
+      margin-right: 20px;
+      height: 50px;
+      background-color: var(--list-color-bg);
+      border: 2px solid #898989;
+      border-radius: 2px;
+    }
+    
+    &__input:focus {
+      border-color: green;
+    }
+
+  }
+  
+  
+  &__error {
+    margin: 50px auto;
+    text-align: center;
+    color: var(--color-font);
+    font-size: 2rem;
+  }
+  &__dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    width: calc(100% - 40px);
+  &__selected {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #898989;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #121427;
+    font-size: 1.5rem;
+    & span {
+      margin-left: 10px;
+      margin-right: auto;
+    }
+    & img {
+      width: 25px;
+      height: 25px;
+      margin-left: 10px;
+      & img:last-child {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: calc(100% + 5px); 
+    left: 0;
+    right: 0;
+    background-color: #121427;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    max-height: 0;
+    font-size: 1.5rem;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    list-style-type: none;
+    & li {
+      padding: 10px;
+      cursor: pointer;
+      border-bottom: 2px solid #898989;
+      padding-left: 30px;
+      &:hover {
+        background-color: var(--blue);
+      }
+    }
+  }
+  
+  
+  
+
+
+  &__selected-img {
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin-right: 20px;
+  }
+
+  &__result {
+    display: flex;
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 30px;
+    top: 0px;
+    transition: top 0.5s ease-in-out;
+    margin-bottom: 100px;
+    & span {
+      margin: 0 30px;
+      vertical-align: bottom;
+      align-self: center;
+    }
+  }
+
+  &__result-image {
+    width: 150px;
+    height: 150px;
+  }
+  &__your-option-counter {
+    border-bottom: 2px solid #898989;
+  }
+}
+
+  &__button-next {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    max-width: calc(100% - 60px);
+    background-color: #bada55;
+    color: var(--color-font);
+    font-size: 1.5rem;
+    border-radius: 15px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+    &:hover {
+      background-color: #94ad42;
+    }
+  }
+  &__warning,
+  &__warning-info {
+    color: red;
+    font-size: 1.4rem;
+    margin: 0 20px;
+    margin-bottom: 100px;
+    margin-top: -100px;
+  }
+  &__warning-info {
+    margin: 0 25px;
+    margin-bottom: 70px;
+  }
+  &__info {
+    background-color: #121427;
+    color: var(--color-font);
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    min-height: 100%;
+    padding-bottom: 100px;
+  }
+  &__add-photo{
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    background-color: #686464;
+    border-radius: 10px;
+    margin: 100px auto;
+    font-size: 1.3rem;
+    padding-top: 45px;
+    overflow: hidden;
+  }
+  &__add-img {
+    width: 45px;
+    height: 45px;
+  }
+
+
+  &__name-signature{
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    margin-left: 25px;
+  }
+  &__name-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 60px);
+    margin: 10px 25px;
+    border-bottom: #dbdada;
+  }
+  &__name-count{
+    background-color: var(--color-bg);
+    border-bottom: 2px solid #898989;
+    font-size: 1.5rem;
+    color: var(--color-font);
+    height: 45px;
+    padding-right: 15px;
+  }
+  &__add-discription,
+  &__add-name {
+    background-color: var(--color-bg);
+    width: 100%;
+    border-radius: 0px;
+    border-bottom: 2px solid #898989;
+    font-size: 1.5rem;
+    color: var(--color-font);
+    height: 45px;
+    padding: 0 10px;
+  &:focus {
+    outline: none;
+  }
+  }
+}
+
+
+#your-option {
+  background-color: var(--color-bg);
+  width: 100%;
+  border-radius: 0px;
+  border-bottom: 2px solid #898989;
+  font-size: 1.5rem;
+  padding-left: 10px;
+}

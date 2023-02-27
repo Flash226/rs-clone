@@ -1,0 +1,278 @@
+@import './style/_header.scss';
+@import './style/_footer.scss';
+@import './style/mainPageTopBlock';
+@import './style/mixesList';
+@import './style/userMixes';
+@import './style/preferences';
+@import './style/mixPage.scss';
+@import './style/catalog';
+@import './style/flavorSuggest';
+@import './style/mixer-now';
+@import './style/brandSuggest';
+@import './style/brandPage';
+@import './style/searchPage';
+@import './style/message';
+@import './style/accountPageAuth';
+@import './style/favorite_flavor';
+@import './style/edit_page';
+@import './style/preloader';
+@import './style/results';
+@import './style/mainPageComplitations';
+@import './style/complitationPage';
+@import './style/listComplitationPage';
+@import './style/mainPagePopularMixes';
+@import './style/new_mix';
+@import './style/errorPage';
+
+:root {
+  --color-bg: #03041b;
+  --color-font: #ffffff;
+  --green: #bada55;
+  --yellow: #ffd049;
+  --light-yellow: #fdf2d2;
+  --orange: #ffa929;
+  --red: #ff6a66;
+  --light-gray: #e3e4e8;
+  --gray: #71738b;
+  --light-blue: #7a7c93;
+  --blue: #34385a;
+  --slider-handle-size: 14px;
+  --slider-handle-border-radius: 2px;
+  --slider-handle-margin-top: -4px;
+  --slider-track-height: 6px;
+  --slider-track-border-radius: 4px;
+  --color-accent: #92aff9;
+  --color-accent--lighter: rgba(146, 175, 249, 0.7);
+  --list-color-bg: hsla(0, 0%, 100%, 0.06);
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-font);
+  font-family: 'Rosario', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.container {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  flex-grow: 1;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  height: 100%;
+  input:not(input[type='range']) {
+    -webkit-transition: color 350ms ease, background-color 350ms ease;
+    transition: color 350ms ease, background-color 350ms ease;
+    color: #ffffff;
+    font-size: 1.2rem;
+    outline: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+  }
+
+  // mixerPage
+  .mixer {
+    margin: 3rem 15rem;
+    background-image: linear-gradient(65deg, #edb8ff, #6148ff);
+    box-shadow: 0 24px 34px 0 rgb(74 58 255 / 5%), 0 9px 24px 0 rgb(0 0 0 / 45%);
+    padding: 1px;
+    border-radius: 25px;
+    .mixer__inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      padding: 25px;
+      background: var(--color-bg);
+      border-radius: 25px;
+      .button {
+        width: 65%;
+        &:hover {
+          opacity: 0.8;
+          a {
+            background-color: var(--color-accent--lighter);
+          }
+        }
+        a {
+          font-size: 1.2rem;
+        }
+      }
+      img {
+        filter: drop-shadow(2px 1px 1px #e609eb);
+      }
+    }
+  }
+  // accountPage
+  .account {
+    position: relative;
+    margin: 25px 25%;
+    background-image: linear-gradient(65deg, #edb8ff, #6148ff);
+    box-shadow: 0 24px 34px 0 rgb(74 58 255 / 5%), 0 9px 24px 0 rgb(0 0 0 / 45%);
+    padding: 1px;
+    border-radius: 25px;
+    .account__inner {
+      padding: 25px;
+      border-radius: 25px;
+      background: var(--color-bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      h3 {
+        text-align: center;
+        font-size: 1.4rem;
+      }
+      .button {
+        background-image: linear-gradient(65deg, #edb8ff, #6148ff);
+        span {
+          font-size: 1.1rem;
+        }
+      }
+      .button:hover {
+        background-image: linear-gradient(65deg, #f2e1f7, #9c8ef5);
+        span {
+          font-size: 1.15rem;
+        }
+      }
+      .button:active {
+        background-image: linear-gradient(65deg, #e082ff, #4225fb, #4ad9f5);
+        span {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .email,
+  .password {
+    background-color: hsla(0, 0%, 100%, 0.06);
+  }
+}
+
+.button {
+  width: 100%;
+  padding: 2px;
+  border-radius: 25px;
+  transition: -webkit-transform 350ms ease;
+  transition: transform 350ms ease;
+  transition: transform 350ms ease, -webkit-transform 350ms ease;
+  -webkit-transition: -webkit-transform 350ms ease;
+  cursor: pointer;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  span,
+  a {
+    text-decoration: none;
+    border-radius: 25px;
+    background-color: var(--color-bg);
+    -webkit-transition-property: none;
+    transition-property: none;
+    color: var(--color-font);
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.button-1 {
+  background-image: linear-gradient(65deg, #edb8ff, #6148ff);
+  box-shadow: 0 24px 34px 0 rgb(74 58 255 / 5%), 0 9px 24px 0 rgb(0 0 0 / 45%);
+}
+.button-2 {
+  background-color: #7759f3;
+  color: var(--color-font);
+  font-size: 1rem;
+}
+.button-2.active {
+  background-color: #bada55;
+}
+.button-3 {
+  font-size: 1.3rem;
+  background-color: #bada55;
+  border-radius: 8px;
+  color: var(--color-font);
+}
+
+@media (max-width: 1200px) {
+  .main {
+    .mixer {
+      margin: 3rem 12rem;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .main {
+    .mixer {
+      margin: 3rem 8rem;
+    }
+    .account {
+      margin: 2rem 12rem;
+    }
+  }
+}
+@media (max-width: 840px) {
+  .main {
+    .mixer {
+      margin: 3rem 4rem;
+    }
+    .account {
+      margin: 2rem 8rem;
+    }
+  }
+}
+@media (max-width: 640px) {
+  .main {
+    .mixer {
+      margin: 3rem 4rem;
+      .mixer__inner {
+        .button {
+          width: -webkit-fill-available;
+          a {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    .account {
+      margin: 2rem 4rem;
+    }
+  }
+}
+@media (max-width: 520px) {
+  .main {
+    .mixer {
+      margin: 3rem 1rem;
+      .mixer__inner {
+        .button a {
+          font-size: 1rem;
+        }
+      }
+    }
+    .account {
+      margin: 2rem 1rem;
+    }
+  }
+}

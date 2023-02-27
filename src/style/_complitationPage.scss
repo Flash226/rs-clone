@@ -1,0 +1,48 @@
+$brands-name: (
+  brusko: brusko,
+  musthave: musthave,
+  darkside: darkside,
+  chabacco: chabacco,
+  burn: burn
+);
+
+@each $name,
+$img in $brands-name {
+
+  .header-#{$name} {
+    background-image: url(assets/images/complitation/#{$img}.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.container-complitation {
+  display: block;
+  padding: 20px 25px;
+}
+
+.complitation__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.complitation__title {
+  margin-top: 130px;
+  font-size: 2rem;
+}
+
+.mixes-list-complitation {
+  gap: 15px;
+  margin: 15px;
+
+  .mixes-list__card {
+    box-shadow: none;
+    border-radius: 5px;
+
+    .mixes-list__button {
+      background-color: #7759f3;
+      background-image: none;
+    }
+  }
+
+}

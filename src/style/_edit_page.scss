@@ -1,0 +1,68 @@
+.section-edit {
+  text-align: center;
+  & .change-photo {
+    display: inline-block;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    & .text-change-button {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      color: #a771d9;
+      cursor: pointer;
+    }
+    & .text-change-button:hover {
+      color: #bfa0dc;
+    }
+    & .text-change-button:active {
+      color: #8768a4;
+    }
+  }
+  & .inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: center;
+    width: 255px;
+    margin: 0 auto 0 auto;
+    & label {
+      font-size: 1.3rem;
+      margin: 20px 0 10px 0;
+      align-items: start;
+    }
+    & input:not(input[type="range"]) {
+      border-radius: 1px;
+      border: none;
+      border-bottom: 1px solid rgb(255, 253, 253);
+      background-color: transparent;
+      padding: 2px;
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+  }
+  & div.button-save {
+    display: inline-block;
+    background-image: linear-gradient(65deg, #edb8ff, #6148ff);
+    width: 260px;
+    margin-top: 45px;
+    span {
+      font-size: 1.4rem;
+    }
+  }
+  & div.button-save:hover {
+    background-image: linear-gradient(65deg, #f2e1f7, #9c8ef5);
+    span {
+      font-size: 1.5rem;
+    }
+  }
+  & div.button-save:active {
+    background-image: linear-gradient(65deg, #e082ff, #4225fb, #4ad9f5);
+    span {
+      font-size: 1.3rem;
+    }
+  }
+.img-profile{
+  z-index: 100;
+}
+
+}

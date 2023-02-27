@@ -1,0 +1,57 @@
+.complitation-list {
+  $brands-name: (
+    brusko: brusko,
+    musthave: musthave,
+    darkside: darkside,
+    chabacco: chabacco,
+    burn: burn,
+  );
+
+  margin: 1rem 3rem;
+  overflow-x: hidden;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  @each $name, $img in $brands-name {
+    &__item {
+      border-radius: 10px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 20px 30px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-image: linear-gradient(to right top, #032c6a, #082354, #0a1b40, #0a122c, #03041a);
+      &.item-#{$name} {
+        background-image: url(assets/images/complitation/#{$img}.jpg);
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+  .more {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 640px) {
+  .complitation-list__items {
+    flex-wrap: wrap;
+  }
+}

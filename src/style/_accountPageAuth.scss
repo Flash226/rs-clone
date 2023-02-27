@@ -1,0 +1,159 @@
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 100px 10rem 0;
+  @media (max-width: 960px) {
+    margin: 100px 3rem 0;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 15px;
+  @media (max-width: 640px) {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.column {
+  flex: 1;
+  background-color: var(--color-bg);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 0 10px 0 10px;
+}
+
+.cell-img {
+  background-color: #0b1933;
+  text-align: start;
+  padding-left: 20px;
+  img {
+    height: 100px;
+  }
+  @media (max-width: 640px) {
+    text-align: center;
+  }
+}
+
+.img-profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  text-align: center;
+  padding-left: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & img {
+    margin-top: -20px;
+    height: 120%;
+  }
+  & img[src$='.svg'] {
+    margin-top: 0px;
+    height: 80px;
+  }
+}
+
+.instagram-column {
+  display: flex;
+  font-size: 1.5rem;
+  margin-left: 30px;
+  & .img-instagram {
+    margin-top: 3px;
+    cursor: pointer;
+  }
+  img {
+    height: 30px;
+  }
+  span {
+    display: inline-block;
+    margin: 5px 0 0 10px;
+    color: #da63e2;
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+    color: #da63e2;
+  }
+}
+
+.profile {
+  margin-top: 30px;
+}
+
+.name {
+  font-size: 1.6rem;
+  margin: 20px 0 5px 0;
+  cursor: pointer;
+}
+
+.amount {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.button-edit {
+  padding: 10px;
+  border: 2px solid #6148ff;
+  border-radius: 10px;
+  text-align: center;
+  width: 230px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  span {
+    margin: 10px;
+  }
+}
+.button-edit:hover {
+  color: #c7cdcd;
+}
+
+.avatar-column {
+  flex-basis: 150px;
+  flex-shrink: 0;
+  order: -1;
+  @media (max-width: 640px) {
+    justify-content: center;
+    display: flex;
+  }
+}
+.name-column {
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.button-exit {
+  color: #e03d3d;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.button-exit:hover {
+  color: #b13131;
+}
+
+.button-exit:active {
+  font-size: 1.4rem;
+}
+
+.wrap-account {
+  @media (max-width: 640px) {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.column .button-column {
+  @media (max-width: 640px) {
+    justify-content: center;
+    display: flex;
+  }
+}

@@ -1,0 +1,127 @@
+.user-mixes-container {
+  background-color: var(--color-bg);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  z-index: 3;
+}
+
+.user-mixes__header {
+  padding: 1rem;
+  background: rgba(237,184,255,1);
+  background: linear-gradient(148deg, rgba(237,184,255,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+.user-mixes__nav {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-mixes__heading {
+  &--sticky {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.user-mixes__back-arrow {
+  width: 2rem;
+  height: 2rem;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+
+.user-mixes__add {
+  width: 2.2rem;
+  height: 2.2rem;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+
+.selector-container {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  column-gap: 1rem;
+  row-gap: 1.5rem;
+  padding: 1rem 1rem 0 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+.selector {
+  background-image: linear-gradient(65deg,#6148ff, #b8cfff);
+  box-shadow: 0 24px 34px 0 rgb(74 58 255 / 5%), 0 9px 24px 0 rgb(0 0 0 / 45%);
+  padding: 1rem;
+  border-radius: 0.6rem;
+  visibility: hidden;
+  display: none;
+  height: 0;
+  list-style: none;
+  overflow-y: hidden;
+
+  &--visible {
+    grid-column: span 2;
+    visibility: visible;
+    display: initial;
+    height: 100%;
+  }
+
+  &__image {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &__text {
+    flex-grow: 1;
+  }
+
+  &__expand-image {
+    width: 2rem;
+    height: 2rem;
+
+    &--reverse {
+      transform: rotateX(180deg);
+      // transition: 0.3s;
+    }
+  }
+
+  &__text-and-expand {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.7rem;
+    border: 1px solid white;
+    padding: 0 0.5rem;
+    height: 100%;
+  }
+
+  &__option {
+    margin: 0 0 1rem 0.5rem;
+
+    &--active {
+      &::before {
+        content: '✓ ';
+        margin-left: -1rem;
+        color: rgb(104, 233, 29);
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
