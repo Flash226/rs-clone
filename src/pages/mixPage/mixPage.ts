@@ -124,13 +124,15 @@ class MixPage implements InterfaceContainerElement {
     if (window.innerWidth < 640 && myChart?.getAttribute('name') == 'desk') {
       myChart?.setAttribute('name', 'mob');
       this.chart.destroy();
-      this.doughnutChart(-50, (n: ChartItem) => `${n.value + '%'}`);
+      this.doughnutChart(0, 16, -50, (n: ChartItem) => `${n.value + '%'}`);
       const chartplugins = this.chart.options.plugins;
       if (chartplugins && chartplugins.legend && chartplugins.outerLabels) {
         chartplugins.legend.display = true;
       }
       Chart.defaults.font.size = 14;
+      Chart.defaults.layout.padding = 0;
       this.chart.update();
+      onResizeSlider();
     } else if (window.innerWidth >= 640 && myChart?.getAttribute('name') == 'mob') {
       myChart?.setAttribute('name', 'desk');
       this.chart.destroy();
@@ -198,7 +200,12 @@ class MixPage implements InterfaceContainerElement {
       }
     }
   };
-  private doughnutChart = (myOffset = 15, callback = (n: any) => `${n.value + '%'} ${n.label}`): void => {
+  private doughnutChart = (
+    layoutPadding = 50,
+    font = 18,
+    myOffset = 15,
+    callback = (n: any) => `${n.value + '%'} ${n.label}`
+  ): void => {
     const ctx = document.getElementById('myChart');
     const colorsArray = ['#06a396', '#fa320a', '#f6bc25', '#202d91', '#f96509', '#987e41', '#914198'];
     const colors: string[] = [];
@@ -225,9 +232,9 @@ class MixPage implements InterfaceContainerElement {
         plugins: {
           outerLabels: {
             // formatter: (val) => val.label,
-            fontNormalSize: 18,
+            fontNormalSize: font,
             fontNormalColor: '#FFFFFF',
-            fontBoldSize: 18,
+            fontBoldSize: font,
             fontBoldColor: '#FFFFFF',
             twoLines: true,
             offset: myOffset,
@@ -250,7 +257,7 @@ class MixPage implements InterfaceContainerElement {
         animation: false,
 
         layout: {
-          padding: 10,
+          padding: layoutPadding,
         },
         events: [],
       },
@@ -391,7 +398,10 @@ class MixPage implements InterfaceContainerElement {
         document.querySelector('#switch')?.addEventListener('click', this.switcher);
         document.querySelector('.mix-card__buttons-row')?.addEventListener('click', this.setGram);
         document.querySelector('#composition')?.addEventListener('input', this.changeRange);
-        document.querySelector('#tab-mix-btn-1')?.addEventListener('click', this.updateSliderValuePosition);
+        document.querySelector('#tab-mix-btn-1')?.addEventListener('click', () => {
+          this.updateSliderValuePosition();
+          onResizeSlider();
+        });
         document.querySelector('#tab-mix-btn-2')?.addEventListener(
           'click',
           () => {
